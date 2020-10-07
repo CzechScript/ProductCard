@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+}
+
+.container {
+    position: relative;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 500px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card .imgbox img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(40%, -50%);
+    width: 180px;
+}
+
+.container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FF1C45;
+    clip-path: circle(125px at 80% 15%);
+    transition: 0.5s ease-in-out;
+}
+
+
+.container .card:hover:before {
+    clip-path: circle(400px at 80% -20%);
+}
+
+.container .card:after {
+    content: "Iphone";
+    position: absolute;
+    top: 60%;
+    left: -10%;
+    font-size: 8em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.container .card .imgbox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgbox {
+    top: 35%;
+    transform: translateY(0%);
+}
+
+.container .card .contentbox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.container .card:hover .contentbox {
+    height: 175px;
+}
+
+
+.container .card .contentbox h2 {
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.container .card .contentbox .size,
+.container .card .contentbox .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s ease-in;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .contentbox .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.container .card:hover .contentbox .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.container .card .contentbox .size h3,
+.container .card .contentbox .color h3 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}
+
+
+.container .card .contentbox .size span {
+    width: 47px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #222;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .card .contentbox .size span:hover {
+    background: #FF1C45;
+}
+
+.container .card .contentbox .color span {
+    width: 20px;
+    height: 20px;
+    background: #FF1C45;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.container .card .contentbox .color span:nth-child(3) {
+    background: #eee;
+}
+
+.container .card .contentbox .color span:nth-child(4) {
+    background: #e9e62c;
+    width: 22px;
+    height: 22px;
+}
+
+
+.container .card .contentbox .color span:hover {
+    border-radius: 25%;
+}
+
+.container .card .contentbox .btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    transition: 0.5s;
+}
+
+.container .card .contentbox .btn a:hover {
+    background: #FF1C45;
+}
+
+.container .card .contentbox .btn {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 0.5s;
+}
+
+.container .card:hover .contentbox .btn {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.7s;
+}
